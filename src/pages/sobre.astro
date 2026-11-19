@@ -1,68 +1,36 @@
-<html lang="pt-BR">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sobre Nós | SS OPALA</title>
-	</head>
-	<body>
-		<header>
-			<strong>SS OPALA</strong>
-			<nav>
-				<ul>
-					<li><a href="/">Início</a></li>
-					<li><a href="/sobre">Sobre</a></li>
-					<li><a href="/equipe">Equipe</a></li>
-					<li><a href="/contato">Contato</a></li>
-				</ul>
-			</nav>
-		</header>
+---
+import LayoutBase from '../layouts/LayoutBase.astro';
+import { empresa } from '../data/empresa.js';
+---
 
-		<main>
-			<section>
-				<h1>Sobre a SS OPALA</h1>
-				<p>Fundada em 20 de maio de 2024 pelas estudantes de tecnologia Emilly Siqueira e Nayra Sousa durante a graduação, a SS OPALA nasceu do desejo de transformar a forma como as empresas se conectam com a tecnologia. Percebendo a demanda do mercado por sistemas que unissem alta performance, segurança e uma estética moderna, as fundadoras uniram seus sobrenomes (Siqueira e Sousa) e a sigla para Software Solutions, junto à simbologia da pedra Opala para dar vida à Software House. Desde então, a empresa dedica-se a lapidar desafios de negócios e entregá-los na forma de softwares web e aplicativos sob medida de alto impacto.</p>
-			</section>
+<LayoutBase 
+	titulo="Sobre Nós" 
+	descricao={`Conheça a história e os valores da ${empresa.nome}.`}
+>
+	<section>
+		<h1>Sobre a {empresa.nome}</h1>
+		<p>{empresa.historia}</p>
+	</section>
 
-			<section>
-				<h2>Missão</h2>
-				<p>Otimizar e transformar processos de negócios por meio do desenvolvimento de softwares web e aplicativos sob medida de alta performance, unindo segurança avançada, estética moderna e usabilidade impecável.</p>
-			</section>
+	<section>
+		<h2>Missão</h2>
+		<p>{empresa.missao}</p>
+	</section>
 
-			<section>
-				<h2>Visão</h2>
-				<p>Ser reconhecida regional e nacionalmente como uma Software House referência em inovação, excelência técnica e elegância no design de soluções digitais sob medida até 2028.</p>
-			</section>
+	<section>
+		<h2>Visão</h2>
+		<p>{empresa.visao}</p>
+	</section>
 
-			<section>
-				<h2>Nossos Valores</h2>
-				<ul>
-					<li>
-						<h3>Lapidação e Excelência</h3>
-						<p>Cuidado nos detalhes, desde o código até a interface do usuário.</p>
-					</li>
-					<li>
-						<h3>Inovação com Propósito</h3>
-						<p>Aplicação de tecnologias modernas focadas em gerar resultados reais para os clientes.</p>
-					</li>
-					<li>
-						<h3>Segurança e Confiabilidade</h3>
-						<p>Compromisso rigoroso com a proteção de dados e a estabilidade dos sistemas.</p>
-					</li>
-					<li>
-						<h3>Transparência e Parceria</h3>
-						<p>Relacionamento próximo e claro em todas as etapas do desenvolvimento.</p>
-					</li>
-					<li>
-						<h3>Estética e Funcionalidade</h3>
-						<p>União perfeita entre um design visualmente atraente e alto desempenho.</p>
-					</li>
-				</ul>
-			</section>
-		</main>
-
-		<footer>
-			<p>&copy; 2026 SS OPALA. Todos os direitos reservados.</p>
-		</footer>
-	</body>
-</html>
+	<section>
+		<h2>Nossos Valores</h2>
+		<ul>
+			{empresa.valores.map((valor) => (
+				<li>
+					<h3>{valor.titulo}</h3>
+					<p>{valor.descricao}</p>
+				</li>
+			))}
+		</ul>
+	</section>
+</LayoutBase>

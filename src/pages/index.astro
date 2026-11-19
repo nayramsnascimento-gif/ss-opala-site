@@ -1,46 +1,20 @@
 ---
-// src/pages/index.astro
+import LayoutBase from '../layouts/LayoutBase.astro';
+import { empresa } from '../data/empresa.js';
 ---
 
-<html lang="pt-BR">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>SS OPALA | Lapidando Soluções Digitais</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Início | SS OPALA</title>
-	</head>
-	<body>
-		<h1>SS OPALA</h1>
-		<p>Lapidando Soluções Digitais</p>
-		<header>
-			<strong>SS OPALA</strong>
-			<nav>
-				<ul>
-					<li><a href="/">Início</a></li>
-					<li><a href="/sobre">Sobre</a></li>
-					<li><a href="/equipe">Equipe</a></li>
-					<li><a href="/contato">Contato</a></li>
-				</ul>
-			</nav>
-		</header>
+<LayoutBase 
+	titulo="Início" 
+	descricao={`Bem-vindo à ${empresa.nome}. ${empresa.slogan}`}
+>
+	<section>
+		<h1>{empresa.slogan}</h1>
+		<p>{empresa.missao}</p>
+		<a href="/contato">Fale Conosco</a>
+	</section>
 
-		<main>
-			<section>
-				<h1>Lapidando Soluções Digitais</h1>
-				<p>Otimizar e transformar processos de negócios por meio do desenvolvimento de softwares web e aplicativos sob medida de alta performance, unindo segurança avançada, estética moderna e usabilidade impecável.</p>
-				<a href="/contato">Fale Conosco</a>
-			</section>
-
-			<section>
-				<h2>Quem Atendemos</h2>
-				<p>Pequenas e médias empresas (PMEs), startups e empreendedores em expansão que buscam modernizar seus processos, automatizar operações ou lançar produtos digitais únicos por meio de sistemas web e aplicativos personalizados de alto impacto.</p>
-			</section>
-		</main>
-
-		<footer>
-			<p>&copy; 2026 SS OPALA. Todos os direitos reservados.</p>
-		</footer>
-	</body>
-</html>
+	<section>
+		<h2>Quem Atendemos</h2>
+		<p>{empresa.publicoAlvo}</p>
+	</section>
+</LayoutBase>
