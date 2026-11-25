@@ -19,14 +19,6 @@ export const empresa = {
     {
       titulo: "Segurança e Confiabilidade",
       descricao: "Compromisso rigoroso com a proteção de dados e a estabilidade dos sistemas."
-    },
-    {
-      titulo: "Transparência e Parceria",
-      descricao: "Relacionamento próximo e claro em todas as etapas do desenvolvimento."
-    },
-    {
-      titulo: "Estética e Funcionalidade",
-      descricao: "União perfeita entre um design visualmente atraente e alto desempenho."
     }
   ],
   publicoAlvo:
