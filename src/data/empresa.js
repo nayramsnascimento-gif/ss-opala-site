@@ -55,6 +55,13 @@ export const empresa = {
       foto: "/images/mark.jpg",
       alt: "Foto de Mark Zuckerberg",
       descricao: "Atua como Analista de QA, Gerente de Contas e Executivo de Negócios."
+    },
+    {
+      nome: "Patrick Jane",
+      cargo: "Engenheiro de Dados e Especialista em Inteligência Artificial",
+      foto: "/images/patrick.jpg",
+      alt: "Foto de Patrick Jane",
+      descricao: "Atua como Engenheiro de Dados e Especialista em IA na SS OPALA, responsável pela análise preditiva, arquitetura de dados e automação inteligente."
     }
   ]
 };
