@@ -1,48 +1,53 @@
 /* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 :root {
-  /* Paleta de Cores baseada no Logo */
-  --cor-primaria: #0d1520; /* Quase preto */
-  --cor-secundaria: #0058ec; /* Azul escuro do degradê (links e botões) */
-  --cor-destaque: #008ff7; /* Azul claro do degradê (decorativo) */
-  --cor-fundo: #ffffff;
-  --cor-fundo-alt: #f8fafc;
-  --cor-texto: #334155;
-  --cor-texto-secundario: #64748b;
+  /* Paleta Oficial da Opala Azul */
+  --areia-clara: #fff3c5;
+  --azul-gelo: #D9F3FA;
+  --azul-ceu: #72d7ff;
+  --azul-opala: #58B8EB;
+  --azul-vivo: #002b6b;
+  --azul-profundo: #087AC3;
+
+  /* Mapeamento Sem Cores Brancas */
+  --cor-fundo: var(--areia-clara);
+  --cor-fundo-alt: var(--azul-gelo);
+  --cor-fundo-bloco: #ffffff; /* Fundo interno estrito para cartões destacados sobre os fundos coloridos */
+  --cor-primaria: var(--azul-profundo);
+  --cor-secundaria: var(--azul-vivo);
+  --cor-destaque: var(--azul-opala);
+
+  --cor-texto: #0d1f33;
+  --cor-texto-secundario: #16385c;
   --cor-texto-invertido: #ffffff;
-  --cor-texto-invertido-suave: #cbd5e1;
-  --cor-borda: #e2e8f0;
-  
-  /* Variável para o Hero */
-  --cor-hero-fim: #00224d;
+  --cor-texto-invertido-suave: var(--azul-gelo);
+  --cor-borda: var(--azul-ceu);
 
-  /* Degradês Globais */
-  --degrade-marca: linear-gradient(
-    90deg,
-    var(--cor-secundaria),
-    var(--cor-destaque)
-  );
-  --degrade-hero: linear-gradient(
-    135deg,
-    var(--cor-primaria),
-    var(--cor-hero-fim)
-  );
+  /* Tipografia */
+  --fonte-principal: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Variáveis Estruturais */
-  --borda-raio: 8px;
-  --sombra-cartao: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --sombra-cartao-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* Hero e Seções */
+  --degrade-hero: linear-gradient(135deg, var(--azul-gelo), var(--azul-ceu));
+  --degrade-marca: linear-gradient(90deg, var(--azul-vivo), var(--azul-profundo));
+
+  --borda-raio: 12px;
+  --sombra-cartao: 0 8px 20px rgba(8, 122, 195, 0.12);
+  --sombra-cartao-hover: 0 12px 28px rgba(8, 122, 195, 0.22);
   --espacamento-secao: 4rem;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
@@ -55,14 +60,26 @@ main {
   flex: 1;
 }
 
-h1, h2, h3 {
+h1, h2 {
+  font-family: var(--fonte-principal);
+  font-weight: 700;
   color: var(--cor-primaria);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-p {
+h3 {
+  font-family: var(--fonte-principal);
+  font-weight: 600;
+  color: var(--cor-primaria);
+  line-height: 1.25;
   margin-bottom: 1rem;
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--cor-texto-secundario);
 }
 
 a {
@@ -90,18 +107,24 @@ a:hover {
   background-color: var(--cor-fundo-alt);
 }
 
+/* Botão com Hover de Alta Visibilidade (Diferente do fundo e do estado normal) */
 .btn {
   display: inline-block;
-  background-color: var(--cor-secundaria);
-  color: var(--cor-texto-invertido);
-  padding: 0.75rem 1.5rem;
+  font-family: var(--fonte-principal);
+  background-color: var(--azul-vivo);
+  color: var(--areia-clara);
+  padding: 0.85rem 1.75rem;
   border-radius: var(--borda-raio);
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 10px rgba(22, 155, 230, 0.3);
+  transition: all 0.25s ease;
 }
 
 .btn:hover {
-  background-color: var(--cor-primaria);
+  background-color: var(--areia-clara);
+  color: var(--azul-profundo);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(8, 122, 195, 0.4);
   text-decoration: none;
 }
