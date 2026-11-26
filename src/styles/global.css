@@ -29,7 +29,7 @@
 
   /* Hero e Seções */
   --degrade-hero: linear-gradient(135deg, var(--azul-gelo), var(--azul-ceu));
-  --degrade-marca: linear-gradient(90deg, var(--azul-vivo), var(--azul-profundo));
+  --degrade-marca: linear-gradient(90deg, var(--azul-opala), var(--azul-profundo));
 
   --borda-raio: 12px;
   --sombra-cartao: 0 8px 20px rgba(8, 122, 195, 0.12);
