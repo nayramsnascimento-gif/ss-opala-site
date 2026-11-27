@@ -18,9 +18,9 @@
   --cor-secundaria: var(--azul-vivo);
   --cor-destaque: var(--azul-opala);
 
-  --cor-texto: #0d1f33;
-  --cor-texto-secundario: #16385c;
-  --cor-texto-invertido: #ffffff;
+  --cor-texto: #072c56;
+  --cor-texto-secundario: #003d7e;
+  --cor-texto-invertido: #022b75;
   --cor-texto-invertido-suave: var(--azul-gelo);
   --cor-borda: var(--azul-ceu);
 
@@ -28,12 +28,12 @@
   --fonte-principal: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Hero e Seções */
-  --degrade-hero: linear-gradient(135deg, var(--azul-gelo), var(--azul-ceu));
-  --degrade-marca: linear-gradient(90deg, var(--azul-opala), var(--azul-profundo));
+  --degrade-hero: linear-gradient(135deg, var(--azul-gelo), var(--azul-opala));
+  --degrade-marca: linear-gradient(90deg, var(--azul-ceu), var(--azul-ceu));
 
   --borda-raio: 12px;
-  --sombra-cartao: 0 8px 20px rgba(8, 122, 195, 0.12);
-  --sombra-cartao-hover: 0 12px 28px rgba(8, 122, 195, 0.22);
+  --sombra-cartao: 0 8px 20px rgba(15, 15, 204, 0.355);
+  --sombra-cartao-hover: 0 12px 28px rgba(8, 55, 195, 0.468);
   --espacamento-secao: 4rem;
 }
 

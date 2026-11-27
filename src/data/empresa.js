@@ -26,6 +26,11 @@ export const empresa = {
   contato: {
     email: "atendimento@ssopala.com.br",
     telefone: "(11) 98765-4321",
+    imagem: {
+      src: "/images/empresa.jpg",
+      alt: "Imagem institucional da SS OPALA",
+      legenda: "Sede e ambiente de desenvolvimento da SS OPALA"
+    },
     endereco: {
       logradouro: "Av. Paulista, 1000",
       complemento: "Conj. 502",

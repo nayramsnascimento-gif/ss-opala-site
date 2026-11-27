@@ -15,6 +15,25 @@ import { empresa } from '../data/empresa.js';
 				<p>Deseja construir uma solução de software sob medida para o seu negócio? Entre em contato com a {empresa.nome}!</p>
 			</div>
 
+			{empresa.contato.imagem && (
+				<div class="balao-imagem-empresa">
+					<Cartao>
+						<figure class="figura-empresa">
+							<img 
+								src={empresa.contato.imagem.src} 
+								alt={empresa.contato.imagem.alt} 
+								class="imagem-empresa"
+							/>
+							{empresa.contato.imagem.legenda && (
+								<figcaption class="legenda-empresa">
+									{empresa.contato.imagem.legenda}
+								</figcaption>
+							)}
+						</figure>
+					</Cartao>
+				</div>
+			)}
+
 			<div class="grid-contato">
 				<Cartao>
 					<h2>Nossa Sede</h2>
@@ -46,6 +65,37 @@ import { empresa } from '../data/empresa.js';
 		color: var(--cor-texto-secundario);
 	}
 
+	/* Cartão da imagem alinhado à largura dos cartões abaixo e sem vazamento */
+	.balao-imagem-empresa {
+		width: 100%;
+		min-width: 0;
+		margin: 0 0 2.5rem 0;
+		overflow: hidden;
+	}
+
+	.figura-empresa {
+		margin: 0;
+		width: 100%;
+		min-width: 0;
+	}
+
+	.imagem-empresa {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-radius: var(--borda-raio);
+	}
+
+	.legenda-empresa {
+		margin-top: 0.75rem;
+		font-size: 0.95rem;
+		line-height: 1.4;
+		text-align: center;
+		color: var(--cor-texto-secundario);
+	}
+
 	.grid-contato {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -55,7 +105,7 @@ import { empresa } from '../data/empresa.js';
 	.grid-contato h2 {
 		font-size: 1.5rem;
 		margin-bottom: 1rem;
-		color: #abe0ff;
+		color: #1f71ff;
 	}
 
 	address {
